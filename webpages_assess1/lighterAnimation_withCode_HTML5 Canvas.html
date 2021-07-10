@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>Van Andrew</title>
+<link rel="stylesheet" href="style.css">
+<style>
+	h1 {text-align: center;}
+	p {text-align: center;}
+	div {text-align: center;}
+	a {text-align: center;}
+	#animation_container {align-content: center;margin-left: auto;
+    margin-right: auto;}
+</style>
+<!-- write your code here -->
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="lighterAnimation_withCode_HTML5 Canvas.js?1625102209559"></script>
+<script>
+// Global Scripts
+	this.button_4.addEventListener("click", fl_ClickToGoToAndStopAtFrame.bind(this));
+function fl_ClickToGoToAndStopAtFrame()
+{
+	this.stop();
+}</script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("0F644BB1C1E9AB42A341A8159D9A023F");
+	var lib=comp.getLibrary();
+	handleComplete({},comp);
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	exportRoot = new lib.lighterAnimation_withCode_HTML5Canvas();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<h1>Playback System</h1>
+<p>Pause and play the animation!</p> 
+</head>
+
+<body onload="init();" style="margin:32px;">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1280px; height:720px">
+		<canvas id="canvas" width="1280" height="720" style=" position: center; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1280px; height:720px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+</body>
+<br>
+<a href="index_assess1.html">Back</a>
+<br>
+</html>
