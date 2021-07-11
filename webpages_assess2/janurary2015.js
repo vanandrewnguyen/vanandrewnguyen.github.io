@@ -24,29 +24,32 @@ function draw() {
   // Start Drawing
   background(255);
   noStroke();
-  var height = 12; var width = 12;
+  var height = 20; var width = 20;
   var numH = canvasHeight/height; 
   var numW = canvasWidth/width;
-
   for(var i=0;i<numW;i++) {
     for(var k=0;k<numH;k++) {
-      if (i % 2 ==0 && k % 2 == 0) {
-        fill(49,211+i*8,66+k*4);
+      var xDis = abs(mouseX-i*width);
+      var yDis = abs(mouseY-k*height);
+      var finalDis = sqrt(xDis*xDis + yDis*yDis);
+      var pc = finalDis / (100 + micLevel*4000);
+      pc = constrain(pc, 0, 1);
+
+      var xx = i*width + 4*sin(i*2 -k + frameCount/24);
+      var yy = k*width + 4*sin(k*2 -i + frameCount/24);
+      var xx2 = (i+1)*width + 4*sin((i+1)*2 -k + frameCount/24);
+      var yy2 = (k+1)*width + 4*sin((k+1)*2 -i + frameCount/32); 
+      var ww = abs(xx2-xx) * pc;
+      var hh = abs(yy2-yy) * pc;
+      var shakeX = random(-2,2)*(1-pc);
+      var shakeY = random(-2,2)*(1-pc);
+
+      if (i % 2 == 0 && k % 2 == 0) {
+        fill(157+i*4*pc, 109+k*2*pc, 229);
       } else {
         fill(255);
       }
-      var xx = i*width + 4*sin(i*2 -k*4 + frameCount/24);
-      var yy = k*width + 4*sin(k*2 -i*12 + frameCount/32);
-      var xx2 = (i+1)*width + 4*sin((i+1)*2 -(k+1)*4 + frameCount/24);
-      var yy2 = (k+1)*width + 4*sin((k+1)*2 -(i+1)*12 + frameCount/32);
-      var ww = abs(xx2-xx) * micLevel*50;
-      var hh = abs(yy2-yy) * micLevel*50;
-      if (i % 2 ==0 && k % 2 == 0) {
-        //circle(xx,yy,width);
-        triangle(xx,yy,xx2+8,yy2+8,xx+(ww+4)*2,yy+(hh+4)*2)
-      } else {
-        ellipse(xx,yy,ww,hh);
-      }
+      ellipse(xx+shakeX,yy+shakeY,ww*1.5,hh*1.5);
     }
   }
   stroke(255); 
