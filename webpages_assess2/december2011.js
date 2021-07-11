@@ -1,6 +1,7 @@
 /* Van-Andrew Nguyen z5367356
 Page 2 of DART1201 Assessment 2 
 Using my own code snippest created from Assessment 1. */
+
 let cnv;
 let canvasWidth = 500; let canvasHeight = 500;
 
