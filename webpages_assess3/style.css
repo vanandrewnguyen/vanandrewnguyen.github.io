@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+}
+
+
+h1 {
+  font-family: verdana;
+  font-size: 32px;
+  color: #242424;
+  padding: 8px;  
+}
+
+p {
+  font-family: verdana;
+  font-size: 16px;
+  color: #242424;
+}
+
+a {
+  font-family: verdana;
+  font-size: 16px;
+  color: #EE9935;
+  text-decoration: none;
+}
+
+#canvasDiv {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.archiveMenu ul {
+  list-style: inside;
+}
+
+.archiveMenu ul li {
+  list-style: none;
+  display: inline-block;
+  line-height: 32px;
+  float: left;
+}
+
+.archiveMenu ul li a {
+  text-decoration: none;
+  font-family: verdana;
+  font-size: 24;
+  color: #323751;
+  padding: 0 32px 0 32px;
+  border-radius: 4px;
+  background-color: #323751;
+  margin: 2px;
+}
+
+.archiveMenu ul li a:hover {
+  color: #E6E6E6;
+  padding: 0 40px 0 40px;
+  text-decoration: underline;
+  transition: padding 0.75s;
+}
+.archiveMenu ul li a:not(:hover) {
+  padding: 0 24px 0 24px;
+  transition: padding 0.25s;
+  background-color: #E6E6E6;
+}
+
+.archiveMenu nav {
+  width: 100%;
+  height: 32px;
+  background-color: #323751;
+}
+
+.archiveList ul li {
+  list-style: circle;
+  line-height: 32px;
+}
+
+.archiveList ul li a {
+  border-radius: 8px;
+  color: #B72E72;
+  background-color: #E2E2E2;
+}
+
+.archiveList ul li a:hover {
+  padding: 0 40px 0 40px;
+  text-decoration: underline;
+  transition: padding 0.1s;
+}
+.archiveList ul li a:not(:hover) {
+  padding: 0 24px 0 24px;
+  transition: padding 0.75s;
+  background-color: #F9F9F9;
+}
+
+
