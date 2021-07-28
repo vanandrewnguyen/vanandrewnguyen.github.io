@@ -15,6 +15,11 @@ let mic;                        // Microphone variable and level
 let micLevel            = 0;
 let micLevelTarget;
 
+let t = 0;
+let lineNum = 36;
+let xx1 = []; let yy1 = [];
+let xx2 = []; let yy2 = [];
+
 function setup() {
   var cnv = createCanvas(cWidth, cHeight);
   cnv.parent('canvasDiv');
@@ -23,6 +28,10 @@ function setup() {
   mic.start();
   getAudioContext().resume();
   cnv.mousePressed(userStartAudio);
+  for(let i=0;i<lineNum;i++) {
+    xx1[i] = 300; yy1[i] = 300; 
+    xx2[i] = 300; yy2[i] = 300; 
+  }
 }
 
 function draw() {
@@ -30,10 +39,11 @@ function draw() {
   noStroke();
   micLevelTarget = mic.getLevel();
   micLevel = lerp(micLevel, micLevelTarget, 0.025);
-  
+  t += micLevel*10;
+
   // Generative circle backgrounds
-  for (var k = 0; k < cWidth; k += 64) {
-    for (var j = 0; j < cHeight; j += 64) {
+  for (var k = 0; k < cWidth; k += 72) {
+    for (var j = 0; j < cHeight; j += 72) {
       // Variables for coord
       var amp = 8 + 1*micLevel*100;
       var freq = 1*micLevel*100;
@@ -48,6 +58,35 @@ function draw() {
       fill(198-(j/2), 245+k, 231-(k+j)/4);
       circle(cx,cy,cr);
     }
+  }
+
+  // Big sprawly mock 3D art
+  strokeWeight(1.8 + 0.3*sin(frameCount/48));
+  var xx = cWidth/2;
+  var yy = cHeight/2 + 64;
+  var amp1 = 180 + 32*sin(t + frameCount / 96);
+  var amp2 = 160 + 24*sin(t + frameCount / 64);
+  var freq1 = 80 
+  var freq2 = 64 
+  
+  xx1[0] = xx + amp1*sin(1 + frameCount/freq1); 
+  yy1[0] = yy + amp1*cos(1 + frameCount/freq1);
+  xx2[0] = xx + amp2*sin(1 + frameCount/freq2); 
+  yy2[0] = yy + amp2*cos(1 + frameCount/freq2); 
+  line(xx1[0], yy1[0], xx2[0], yy2[0]);
+  
+  for(let i=1;i<lineNum;i++) {
+    stroke(198 - i*2 + 32*sin(frameCount/32), 245 + i*3, 231-i*4);
+    
+    var followRate = constrain(0.1 + micLevel*5, 0, 0.5);
+    xx1[i] = lerp(xx1[i], xx1[i-1], followRate);
+    yy1[i] = lerp(yy1[i], yy1[i-1], followRate);
+    xx2[i] = lerp(xx2[i], xx2[i-1], followRate);
+    yy2[i] = lerp(yy2[i], yy2[i-1], followRate);
+    
+    line(xx1[i], yy1[i], xx2[i], yy2[i]);
+    line(xx1[i], yy1[i], xx1[i-1], yy1[i-1]);
+    line(xx2[i], yy2[i], xx2[i-1], yy2[i-1]);
   }
 
   // Create Tree

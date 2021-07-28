@@ -32,7 +32,7 @@ function draw() {
       var xDis = abs(mouseX-i*width);
       var yDis = abs(mouseY-k*height);
       var finalDis = sqrt(xDis*xDis + yDis*yDis);
-      var pc = finalDis / (100 + micLevel*4000);
+      var pc = finalDis / (180 + micLevel*4000);
       pc = constrain(pc, 0, 1);
 
       var xx = i*width + 4*sin(i*2 -k + frameCount/24);

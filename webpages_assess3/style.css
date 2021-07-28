@@ -100,4 +100,18 @@ a {
   background-color: #F9F9F9;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #8186A3;
+  color: white;
+  text-align: center;
+  height: 20px;
+}
 
+.footer p {
+  color: white;
+  font-size: 12px;
+}
