@@ -61,7 +61,7 @@ function draw() {
   }
 
   // Big sprawly mock 3D art
-  strokeWeight(1.8 + 0.3*sin(frameCount/48));
+  strokeWeight(0.6 + 0.2*sin(frameCount/48));
   var xx = cWidth/2;
   var yy = cHeight/2 + 64;
   var amp1 = 180 + 32*sin(t + frameCount / 96);

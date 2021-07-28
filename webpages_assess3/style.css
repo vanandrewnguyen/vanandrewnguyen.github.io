@@ -11,12 +11,21 @@ canvas {
   top: 0;
 }
 
+@keyframes h1_anim {
+  0%   {left:1000px; top:0px;}
+  95%  {left:-5px; top:0px;}
+  100% {left:0px; top:0px;}
+}
 
 h1 {
   font-family: verdana;
   font-size: 32px;
   color: #242424;
   padding: 8px;  
+  position: relative;
+  animation-name: h1_anim;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
 }
 
 p {
@@ -78,9 +87,20 @@ a {
   background-color: #323751;
 }
 
+@keyframes menu_anim {
+  0%   {left:-1000px; top:0px;}
+  95% {left:10px; top:0px;}
+  100% {left:0px; top:0px;}
+}
+
 .archiveList ul li {
   list-style: circle;
   line-height: 32px;
+  position: relative;
+  padding: 8px 0px 8px 0px;
+  animation-name: menu_anim;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
 }
 
 .archiveList ul li a {
@@ -90,12 +110,12 @@ a {
 }
 
 .archiveList ul li a:hover {
-  padding: 0 40px 0 40px;
+  padding: 4px 40px 4px 40px;
   text-decoration: underline;
   transition: padding 0.1s;
 }
 .archiveList ul li a:not(:hover) {
-  padding: 0 24px 0 24px;
+  padding: 2px 24px 2px 24px;
   transition: padding 0.75s;
   background-color: #F9F9F9;
 }
@@ -115,3 +135,4 @@ a {
   color: white;
   font-size: 12px;
 }
+
