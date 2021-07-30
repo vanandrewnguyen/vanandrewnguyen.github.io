@@ -62,15 +62,15 @@ a {
   text-decoration: none;
   font-family: verdana;
   font-size: 24;
-  color: #323751;
-  padding: 0 32px 0 32px;
+  color: #F3D8B2;
+  padding: 0 24px 0 24px;
   border-radius: 4px;
-  background-color: #323751;
+  background-color: #F3D8B2;
   margin: 2px;
 }
 
 .archiveMenu ul li a:hover {
-  color: #E6E6E6;
+  color: #7F6E74;
   padding: 0 40px 0 40px;
   text-decoration: underline;
   transition: padding 0.75s;
@@ -78,13 +78,13 @@ a {
 .archiveMenu ul li a:not(:hover) {
   padding: 0 24px 0 24px;
   transition: padding 0.25s;
-  background-color: #E6E6E6;
+  background-color: #7F6E74;
 }
 
 .archiveMenu nav {
   width: 100%;
   height: 32px;
-  background-color: #323751;
+  background-color: #F3D8B2;
 }
 
 @keyframes menu_anim {

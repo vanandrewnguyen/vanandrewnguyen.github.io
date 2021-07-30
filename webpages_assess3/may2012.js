@@ -89,8 +89,26 @@ var yy = canvasHeight/2;
 fill(252, 97 + micLevel*200, 179 - micLevel*500);
 stroke(97, 13, 38);
 flowerVariationOne(xx, yy, rad, 
-                   petalNum, petalWidth, 1, initialCircleRep, initialflowerEdge);
+                   petalNum, petalWidth*1.5, 1, initialCircleRep, initialflowerEdge);
 
+flowerVariationOne(xx-128, yy-128, rad/2, 
+                   petalNum/2, petalWidth/2, 0, 0, 1);
+flowerVariationOne(xx+128, yy-128, rad/2, 
+                  petalNum/2, petalWidth/2, 0, 0, 1);
+flowerVariationOne(xx+128, yy+128, rad/2, 
+                  petalNum/2, petalWidth/2, 0, 0, 1);
+flowerVariationOne(xx-128, yy+128, rad/2, 
+                  petalNum/2, petalWidth/2, 0, 0, 1);
+
+flowerVariationOne(xx-128*1.5, yy, rad, 
+                  petalNum/2, petalWidth/1, 1, 0, 1);
+flowerVariationOne(xx+128*1.5, yy, rad, 
+                  petalNum/2, petalWidth/1, 1, 0, 1);
+flowerVariationOne(xx, yy+128*1.5, rad, 
+                  petalNum/2, petalWidth/1, 1, 0, 1);
+flowerVariationOne(xx, yy-128*1.5, rad, 
+                  petalNum/2, petalWidth/1, 1, 0, 1);
+//flowerVariationOne(xx - 64, yy - 64, rad, 0, 1, 0, 0, 0);
 }
 
 // Set up variations of flowers

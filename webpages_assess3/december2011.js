@@ -84,6 +84,7 @@ function draw() {
   stroke(97, 13, 38);
   strokeWeight(1 + 0.5*sin(frameCount/32))
   flowerVariationOne(xx, yy, rad, petalNum, petalWidth);
+  
 }
 
 // Set up variations of flowers
