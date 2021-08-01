@@ -4,8 +4,8 @@ Creates a recursive tree which emulates a 'swaying' motion. Tree growth is depen
 */
 
 // Declare Common Variables
-let cWidth              = 600;
-let cHeight             = 600;
+let cWidth              = 500;
+let cHeight             = 500;
 let theta               = 0;
 let trunkHeight         = 180;  // Height of initial line
 let initialBranchLength = trunkHeight*0.66;
@@ -14,11 +14,8 @@ let minimumHeight       = 3;    // Minimum branch length for drawing
 let mic;                        // Microphone variable and level
 let micLevel            = 0;
 let micLevelTarget;
-
-let t = 0;
-let lineNum = 36;
-let xx1 = []; let yy1 = [];
-let xx2 = []; let yy2 = [];
+var recorder, soundFile;
+var state               = 0;
 
 function setup() {
   var cnv = createCanvas(cWidth, cHeight);
@@ -28,22 +25,34 @@ function setup() {
   mic.start();
   getAudioContext().resume();
   cnv.mousePressed(userStartAudio);
-  for(let i=0;i<lineNum;i++) {
-    xx1[i] = 300; yy1[i] = 300; 
-    xx2[i] = 300; yy2[i] = 300; 
-  }
+  recorder = new p5.SoundRecorder();
+  recorder.setInput(mic);
+  soundFile = new p5.SoundFile();
 }
 
 function draw() {
   background(255);
   noStroke();
+  
+  // Audio
   micLevelTarget = mic.getLevel();
   micLevel = lerp(micLevel, micLevelTarget, 0.025);
-  t += micLevel*10;
-
+  //Recording
+  if (state === 0 && mic.enabled) {
+    recorder.record(soundFile);
+  } else if (state === 1) {
+    recorder.stop();
+    state++;
+  } else if (state === 2) {
+    soundFile.play(); 
+    state++;
+  } else if (state == 3) {
+    if (theta < 0.5) { state = 0; } 
+  }
+  
   // Generative circle backgrounds
-  for (var k = 0; k < cWidth; k += 72) {
-    for (var j = 0; j < cHeight; j += 72) {
+  for (var k = 0; k < cWidth; k += 64) {
+    for (var j = 0; j < cHeight; j += 64) {
       // Variables for coord
       var amp = 8 + 1*micLevel*100;
       var freq = 1*micLevel*100;
@@ -58,35 +67,6 @@ function draw() {
       fill(198-(j/2), 245+k, 231-(k+j)/4);
       circle(cx,cy,cr);
     }
-  }
-
-  // Big sprawly mock 3D art
-  strokeWeight(0.6 + 0.2*sin(frameCount/48));
-  var xx = cWidth/2;
-  var yy = cHeight/2 + 64;
-  var amp1 = 180 + 32*sin(t + frameCount / 96);
-  var amp2 = 160 + 24*sin(t + frameCount / 64);
-  var freq1 = 80 
-  var freq2 = 64 
-  
-  xx1[0] = xx + amp1*sin(1 + frameCount/freq1); 
-  yy1[0] = yy + amp1*cos(1 + frameCount/freq1);
-  xx2[0] = xx + amp2*sin(1 + frameCount/freq2); 
-  yy2[0] = yy + amp2*cos(1 + frameCount/freq2); 
-  line(xx1[0], yy1[0], xx2[0], yy2[0]);
-  
-  for(let i=1;i<lineNum;i++) {
-    stroke(198 - i*2 + 32*sin(frameCount/32), 245 + i*3, 231-i*4);
-    
-    var followRate = constrain(0.1 + micLevel*5, 0, 0.5);
-    xx1[i] = lerp(xx1[i], xx1[i-1], followRate);
-    yy1[i] = lerp(yy1[i], yy1[i-1], followRate);
-    xx2[i] = lerp(xx2[i], xx2[i-1], followRate);
-    yy2[i] = lerp(yy2[i], yy2[i-1], followRate);
-    
-    line(xx1[i], yy1[i], xx2[i], yy2[i]);
-    line(xx1[i], yy1[i], xx1[i-1], yy1[i-1]);
-    line(xx2[i], yy2[i], xx2[i-1], yy2[i-1]);
   }
 
   // Create Tree
@@ -105,6 +85,7 @@ function draw() {
                                   trunkHeight*(0.66/2), 
                                   trunkHeight*0.66);
   theta = radians(angle);
+  if (theta > 1.57 && state == 0) { state++; }
   
   // Move drawing point to bottom center
   translate(cWidth/2,cHeight);
@@ -156,6 +137,12 @@ function createBranch(height, prevRatio) {
     pop();
   }
 }
+
+function keyPressed() {
+  // make sure user enabled the mic
+
+}
+
 
 
 
