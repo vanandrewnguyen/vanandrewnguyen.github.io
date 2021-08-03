@@ -9,18 +9,32 @@ let mic;
 let micLevel = 0;
 let micLevelTarget;
 
+// Worm Var
+let cxx = []; let cyy = [];
+let circleNum = 16;
+let tarX = 0; let tarY = 0;
+let tarTimer = 90; let tarTimerInt = 0;
+
 function setup() {
   cnv = createCanvas(canvasWidth, canvasHeight);
   cnv.mousePressed();
   cnv.parent('canvasDiv');
   mic = new p5.AudioIn();
   mic.start();
+  for(let i=0;i<circleNum;i++) {
+    cxx[i] = 0; cyy[i] = 0; 
+  }
 }
 
 function draw() {  
   micLevelTarget = mic.getLevel();
   micLevel = lerp(micLevel, micLevelTarget, 0.05);
   
+  let lerpDelay = 0.05;
+  let lerpBase = 0.4;
+  let mag = 0;
+  let magMax = 2;
+
   // Start Drawing
   background(255);
   noStroke();
@@ -48,5 +62,22 @@ function draw() {
       circle(xx,yy,4);
     }
   }
+
+  noStroke();
+  
+  // Draw Worm
+  cxx[circleNum] = lerp(cxx[circleNum-2],tarX,lerpBase/2);
+  cyy[circleNum] = lerp(cyy[circleNum-2],tarY,lerpBase/2);
+  circle(cxx[circleNum], cyy[circleNum], 6);
+  for(var j=(circleNum-1);j>0;j-=1) {
+      cxx[j] = lerp(cxx[j],cxx[j+1],lerpDelay*j); 
+      cyy[j] = lerp(cyy[j],cyy[j+1],lerpDelay*j);
+      
+      fill(250-micLevel*500, 171-j*4, 58+j*8);
+      line(cxx[j], cyy[j], cxx[j+1], cyy[j+1]);
+      ellipse(cxx[j], cyy[j], abs(cxx[j]-cxx[j+1])*(0.25+micLevel*50), abs(cyy[j]-cyy[j+1])*(0.25+micLevel*50));
+  }
+  tarX = mouseX; tarY = mouseY;
+
   stroke(255);    
 }
