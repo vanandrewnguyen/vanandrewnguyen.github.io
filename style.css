@@ -1,85 +1,287 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
 
-canvas {
-  margin: 0;
-  justify-content: center;
-  align-items: center;
-  left: 0;
-  top: 0;
+body {
+    line-height:1;
 }
 
-
-h1 {
-  font-family: verdana;
-  font-size: 32px;
-  color: #242424;
-  padding: 8px;  
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
 }
 
-p {
-  font-family: verdana;
-  font-size: 16px;
-  color: #242424;
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
 }
 
 a {
-  font-family: verdana;
-  font-size: 16px;
-  color: #EE9935;
-  text-decoration: none;
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
 
-#canvasDiv {
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
 }
 
-ul {
-  text-align: center;
-  list-style: inside;
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
 }
 
-ul li {
-  list-style: none;
-  display: inline-block;
-  line-height: 100px;
+del {
+    text-decoration: line-through;
 }
 
-ul li a {
-  text-decoration: none;
-  font-family: verdana;
-  font-size: 16;
-  color: #EFA956;
-  padding: 0 32px 0 32px;
-  border-radius: 10px 20px 10px;
-  background-color: #F9F0E3;
-  margin: 8px;
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
 }
 
-ul li a:hover {
-  color: #F4911C;
-  padding: 0 48px 0 48px;
-  text-decoration: underline;
-  transition: padding 0.75s;
+table {
+    border-collapse:collapse;
+    border-spacing:0;
 }
-ul li a:not(:hover) {
-  padding: 0 32px 0 32px;
-  transition: padding 0.25s;
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
 }
+
+input, select {
+    vertical-align:middle;
+}
+
+/* Code Starts Here ----------------------------------------> */
+
+/* Menu CSS */
 
 nav {
-  width: 100%;
-  height: 100px;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(30, 30, 30);
 }
 
-#titleText {
-  
+.menu-list {
+    display: block;
+    margin-left: 22%;
+    margin-right: 22%;
 }
 
+.menu-item {
+    list-style: none;
+    float: right;
+    line-height: 50px;
+}
 
+.menu-item-content {
+    text-decoration: none;
+    font: 16px georgia, sans-serif;
+    font-weight: bold;
+    color: rgb(200, 200, 200);
+    padding: 0 16px;
+}
 
+.menu-item-content:hover {
+    color: darksalmon;
+}
+
+/* Body */
+
+.body-content {
+    font: 16px georgia, sans-serif;
+}
+
+.body-wrapper {
+    width: 56%;
+    margin-left: 22%;
+    margin-right: 22%;
+}
+
+body {
+    background-color: rgb(40, 40, 40);
+    color: rgb(200, 200, 200);
+}
+
+/* Index page */
+
+.index-h1 {
+    font: 48px georgia, sans-serif;
+    font-weight: bold;
+    padding: 15% 0 32px 0;
+    text-align: center;
+}
+
+#title-content {
+    text-align: center;
+}
+
+.shader {
+    padding: 0 0 18px 0;
+}
+
+.contact-icons {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: center;
+}
+
+#about-contact-icons {
+    text-align: left;
+}
+
+/* About Page */
+
+.about-h1 {
+    font: 48px georgia, sans-serif;
+    font-weight: bold;
+    padding: 64px 0 32px 0;
+}
+
+.contact-content {
+    padding-bottom: 32px;
+}
+
+.about-content {
+    padding-bottom: 32px;
+}
+
+/* Projects */
+
+.projects-h2 {
+    font: 32px georgia, sans-serif;
+    font-weight: bold;
+    padding: 32px 0 16px 0;
+}
+
+.project-wrapper {
+    float: left;
+    width: 50%;
+}
+
+.project-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.project-content {
+    font: 16px georgia, sans-serif;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-right: 8px;
+}
+
+.project-content-link {
+    font: 16px georgia, sans-serif;
+    color:darksalmon;
+    text-decoration: none;
+}
+
+.project-content-link:hover {
+    color: rgb(200, 200, 200)
+}
+
+.project-content-title {
+    font: 16px georgia, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color:darksalmon;
+}
+
+.project-content-title:hover {
+    color: rgb(200, 200, 200);
+}
+
+.project-tech {
+    font: 16px georgia, sans-serif;
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    padding: 3px 6px 3px 6px;
+    border-radius: 5px;
+    color: rgb(40, 40, 40);
+    background-color: rgb(200, 200, 200);
+    font-weight: bold;
+}
+
+.project-tech:hover {
+    background-color: darksalmon;
+}
+
+#main-footer {
+    text-align: center;
+    font: 16px georgia, sans-serif;
+    padding: 8px 0 8px 0;
+    color: rgb(200, 200, 200);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(40, 40, 40);
+}
+
+/* Adjustments for screen sizes */
+
+/* Screen has min width, this is for laptops */
+@media only screen and (max-width: 768px) {
+    .menu-list {
+        width: 100%;
+        display: block;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .body-wrapper {
+        width: 100%;
+        padding: 0 0 0 0;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
