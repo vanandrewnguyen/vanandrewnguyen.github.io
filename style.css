@@ -219,6 +219,7 @@ body {
     padding-bottom: 8px;
     padding-top: 8px;
     padding-right: 8px;
+    line-height: 1.3;
 }
 
 .project-content-link {
@@ -255,6 +256,10 @@ body {
 
 .project-tech:hover {
     background-color: darksalmon;
+}
+
+.project-image {
+    padding-bottom: 8px;
 }
 
 #main-footer {
