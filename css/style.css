@@ -157,7 +157,7 @@ body {
 .index-h1 {
     font: 48px georgia, sans-serif;
     font-weight: bold;
-    padding: 15% 0 32px 0;
+    padding: 12% 0 32px 0;
     text-align: center;
 }
 
@@ -177,6 +177,31 @@ body {
 
 #about-contact-icons {
     text-align: left;
+}
+
+#canvas {
+    position: absolute;
+    height: 45vh;
+    bottom: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 48vh;
+    width: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(40, 40, 40, 1),
+        rgba(40, 40, 40, 0.99),
+        rgba(40, 40, 40, 0.7),
+        rgba(40, 40, 40, 0.2),
+        rgba(40, 40, 40, 0)
+    );
 }
 
 /* About Page */
@@ -260,12 +285,18 @@ body {
 
 .project-image {
     padding-bottom: 8px;
+    transition: all 0.1s;
+    border-radius: 2%;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
 }
 
 #main-footer {
     text-align: center;
-    font: 16px georgia, sans-serif;
-    padding: 8px 0 8px 0;
+    font: 12px georgia, sans-serif;
+    padding: 4px 0 4px 0;
     color: rgb(200, 200, 200);
     position: fixed;
     bottom: 0;
