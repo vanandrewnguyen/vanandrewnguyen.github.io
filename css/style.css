@@ -181,7 +181,7 @@ body {
 
 #canvas {
     position: absolute;
-    height: 40vh;
+    height: 38vh;
     bottom: 0;
     max-width: 100%;
     width: 100%;
@@ -192,7 +192,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 45vh;
+    height: 42vh;
     width: 100%;
     background: linear-gradient(
         to bottom,
