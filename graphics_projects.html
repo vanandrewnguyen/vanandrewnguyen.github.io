@@ -12,26 +12,20 @@
     <nav>
         <ul class="menu-list">
             <li class="menu-item"><a class="menu-item-content" href="about">About</a></li>
-            <li class="menu-item"><a class="menu-item-content" href="projects">Projects</a></li>
+            <li class="menu-item"><a class="menu-item-content" href="art_projects">Art</a></li>
+            <li class="menu-item"><a class="menu-item-content" href="uni_projects">Projects</a></li>
+            <li class="menu-item"><a class="menu-item-content" href="https://vanandrew.itch.io/">Gamedev</a></li>
+            <li class="menu-item"><a class="menu-item-content" href="graphics_projects">Graphics</a></li>
             <li class="menu-item"><a class="menu-item-content" href="index">Home</a></li>
         </ul>
     </nav>
 
     <div class="body-wrapper">
-        <h1 class="about-h1">Selected Projects</h1>
+        <h1 class="about-h1">Computer Graphics Projects</h1>
         <p class="body-content">
-            Most projects below are open source. You can view the code on Github.
-            <br>
-            Here are an assortment of computer graphics and game development projects I've made in my spare time.
-            <br>
-            <br>
-            Contents:
-            <br>
-            <p class="project-tech">Rendering</p>
-            <p class="project-tech">Shaders</p>
-            <p class="project-tech">Games</p>
-            <p class="project-tech">Video Breakdowns</p>
-            <p class="project-tech">Misc.</p>
+            I deeply enjoy understanding the math and design behind computer graphics models. Working with 
+            graphics allows me to shift perspectives from artist to designer to researcher, and it's one of the few
+            areas of study I've been forced to learn major theory outside of computer science; colour theory, physics models, aesthetic design.
         </p>
 
         <h2 class="projects-h2">Rendering Engines</h2>
@@ -43,7 +37,8 @@
                 <p class="project-tech">C++</p>
                 <p class="project-content">
                     Following Peter Shirley's "Raytracing" series, I wrote a basic raytracing engine which covers diffuse lighting,
-                    subsurface scattering, volmetric mediums and caustics, and collisions with boxes and spheres.
+                    subsurface scattering, volmetric mediums and caustics, and collisions with boxes and spheres. I'm extending it with custom features
+                    such as custom scene configuration and extended ray-triangle collisions.
                 </p>
             </div>
             <div class="project-wrapper">
@@ -100,8 +95,8 @@
                 <br>
                 <p class="project-tech">GLSL</p>
                 <p class="project-content">
-                    This pixel shader uses subsurface scattering.
-                    Light propagates in the volume, which is procedurally generated with perlin noise functions.
+                    This pixel shader explores the use of subsurface scattering. Light propagates in the volume, 
+                    which is procedurally generated with perlin noise functions. This gives the appearance of a wax-like substance.
                 </p>
             </div>
             <div class="project-wrapper">
@@ -122,37 +117,6 @@
                 <p class="project-content">
                     This pixel shader makes use of triplanar mapping to map perlin noise onto a sphere sdf, creating a planet.
                     The atmosphere is simulated using a fake 2D bloom.
-                </p>
-            </div>
-        </div>
-        
-        <h2 class="projects-h2">Games</h2>
-        <p class="project-content">
-        My start in programming was game-development which spanned many different genres. I've worked on multiplayer networked soccer games,
-        Smash Bros-style fighting games to horror survival shooters.
-        For the full collection of my previous game projects, please see my <a class="project-content-link" href="https://vanandrew.itch.io/">store page</a></p>
-        <div class="project-row">
-            <div class="project-wrapper">
-                <img class="project-image" src="images/tftfu_21_9ratio.png" alt="TFTFU" width="99%" height="99%">
-                <a class="project-content-title" href="https://vanandrew.itch.io/flames">The Flames that Follow Us</a>
-                <br>
-                <p class="project-tech">GML</p>
-                <p class="project-tech">GLSL</p>
-                <p class="project-content">
-                    A 16-month endeavour with two composers. Winner of the 2020 Bright Awards.
-                    This video-game tackles mental health with fighting-game mechanics.
-                    I wrote up rudimentary fighting-game AI with area-based pathfinding.
-                    All characters were meticulously hand-animated.
-                </p>
-            </div>
-            <div class="project-wrapper">
-                <img class="project-image" src="images/21_9ratio.png" alt="Kadent" width="99%" height="99%">
-                <a class="project-content-title" href="https://vanandrew.itch.io/kadent">Kadent</a>
-                <br>
-                <p class="project-tech">GML</p>
-                <p class="project-content">
-                    A rhythm game which features a heavy exploration of UI/UX in games. In this project
-                    I attempted to focus on user-experience with slick, animated menus and "game-feel".
                 </p>
             </div>
         </div>
@@ -181,67 +145,6 @@
             </div>
         </div>
 
-        <h2 class="projects-h2">Misc</h2>
-        <p class="project-content">University projects.</p>
-        <div class="project-row">
-            <div class="project-wrapper">
-                <a class="project-content-title" href="https://editor.p5js.org/vanandrew/sketches/keIk_BU2v">Audio-based Interactive Patterns</a>
-                <br>
-                <p class="project-tech">Javascript</p>
-                <p class="project-content">
-                    I toyed with P5.js to create interactive backgrounds as part of a major work.
-                    These backgrounds react to the user's microphone input.
-                </p>
-            </div>
-            <div class="project-wrapper">
-                <a class="project-content-title" href="#">Tigger</a>
-                <br>
-                <p class="project-tech">Shell</p>
-                <p class="project-content">
-                    A git command-line clone. This project features repos which can add and commit files.
-                    Code avaliable on request.
-                </p>
-            </div>
-        </div>
-
-        <div class="project-row">
-            <div class="project-wrapper">
-                <a class="project-content-title" href="#">Dungeon Mania</a>
-                <br>
-                <p class="project-tech">Java</p>
-                <p class="project-content">
-                    A web turn-based dungeon game with a group of 5 using agile methodologies. 
-                    Wrote medium-scale maintainable code using design patterns, such as map gen and turn-rewinding.
-                    Code avaliable on request.
-                </p>
-            </div>
-            <div class="project-wrapper">
-                <a class="project-content-title" href="#">Seams</a>
-                <br>
-                <p class="project-tech">Python</p>
-                <p class="project-content">
-                    A Microsoft Teams clone. Group of 4 using agile methodologies. Basic CRUD messaging application
-                    with user authorisation and profiles.
-                    Code avaliable on request.
-                </p>
-            </div>
-        </div>
-
-        <div class="project-row">
-            <div class="project-wrapper">
-                <a class="project-content-title" href="#">Portfolio Website</a>
-                <br>
-                <p class="project-tech">HTML</p>
-                <p class="project-tech">CSS</p>
-                <p class="project-tech">Three.js</p>
-                <p class="project-content">
-                    This website! I tried my hand at web-dev with basic HTML and CSS. I integrated basic shaders with three.js.
-                </p>
-            </div>
-            <div class="project-wrapper">
-                
-            </div>
-        </div>
     </div>
 
     <br>
