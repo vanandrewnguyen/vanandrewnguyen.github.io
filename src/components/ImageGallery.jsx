@@ -24,7 +24,7 @@ const ImageGallery = (gallery) => {
   };
 
   return (
-    <ImageList variant="quilted" cols={4} style={{ width: '90vw' }}>
+    <ImageList variant="quilted" cols={4} style={{ width: '65vw' }}>
       {itemData.map((item) => (
         <ImageListItem key={item.img} cols={item.cols} rows={item.rows}>
           <img
