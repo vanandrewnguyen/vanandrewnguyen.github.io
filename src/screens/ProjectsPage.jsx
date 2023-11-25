@@ -1,10 +1,12 @@
 import React from 'react';
 import { Grid, Box, Typography } from '@mui/material';
+
 import ProjectCard from '../components/ProjectCard';
+import ImageGallery from '../components/ImageGallery';
+
 import * as proj from '../js/projectData';
 
 const ProjectsPage = () => {
-  
 
   return (
     <div>
@@ -14,7 +16,7 @@ const ProjectsPage = () => {
         
         <Box section="section">
           <Typography variant="h4">Rendering</Typography>
-          <Grid container spacing={1}>
+          <Grid container spacing={1} style={{ width: '90vw' }}>
             <Grid item xs={6}>
               <ProjectCard props={proj.projRaytracer} />
             </Grid>
@@ -24,9 +26,9 @@ const ProjectsPage = () => {
           </Grid>
         </Box>
 
-        <Box section="section">
-          <Typography variant="h4">Shaders</Typography>
-          <Grid container spacing={1}>
+      <Box section="section">
+        <Typography variant="h4">Shaders</Typography>
+          <Grid container spacing={1} style={{ width: '90vw' }}>
             <Grid item xs={4}>
               <ProjectCard props={proj.shaderPathtracer} />
             </Grid>
@@ -46,24 +48,28 @@ const ProjectsPage = () => {
               <ProjectCard props={proj.shaderPlanet} />
             </Grid>
           </Grid>
+        </Box>
 
+        <Box section="section">
           <Typography variant="h5">Shader Gallery</Typography>
+          <ImageGallery gallery={proj.shaderGallery} />
+        </Box>
 
+        <Box section="section">
           <Typography variant="h5">Shader Breakdown</Typography>
-          <Grid container spacing={1}>
-            <Grid item xs={4}>
+          <Grid container spacing={1} style={{ width: '90vw' }}>
+            <Grid item xs={6}>
               <ProjectCard props={proj.videoMountain} />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
               <ProjectCard props={proj.videoWater} />
             </Grid>
           </Grid>
-
         </Box>
 
         <Box section="section">
           <Typography variant="h4">Game Development</Typography>
-          <Grid container spacing={1}>
+          <Grid container spacing={1} style={{ width: '90vw' }}>
             <Grid item xs={4}>
               <ProjectCard props={proj.gameTFTFU} />
             </Grid>
@@ -78,7 +84,7 @@ const ProjectsPage = () => {
 
         <Box section="section">
           <Typography variant="h4">University</Typography>
-          <Grid container spacing={1}>
+          <Grid container spacing={1} style={{ width: '90vw' }}>
             <Grid item xs={4}>
               <ProjectCard props={proj.projPatterns} />
             </Grid>
@@ -93,6 +99,9 @@ const ProjectsPage = () => {
             </Grid>
             <Grid item xs={4}>
               <ProjectCard props={proj.projDNS} />
+            </Grid>
+            <Grid item xs={4}>
+              <ProjectCard props={proj.projPortfolio} />
             </Grid>
           </Grid>
         </Box>

@@ -2,21 +2,23 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardActionArea, CardMedia, Chip, Box, Typography, Button, Link } from '@mui/material';
 
 const ProjectCard = ({ props }) => {
-  const width = 400;
   const [expanded, setExpanded] = useState(false);
+  const defaultImg = require('../images/rendering/render2.png');
 
   const handleToggle = () => {
     setExpanded(!expanded);
   }
 
+  // sx={{ width: cardWidth }} or minWidth and maxWidth
+
   return (
     <>
-      <Card sx={{ minWidth: width, maxWidth: width }} onClick={handleToggle}>
+      <Card onClick={handleToggle}>
         <CardActionArea>
           <CardMedia
             component="img"
             height={expanded ? "120" : "80"}
-            image={props.thumb ? '' : props.thumb}
+            image={props.thumb ?? defaultImg}
             alt={props.name + ' image'}
           />
           <CardContent>
@@ -33,8 +35,8 @@ const ProjectCard = ({ props }) => {
                 <Box section="section" sx={{ my: 1 }}>
                   <Typography color="text.secondary">{props.description}</Typography>
                 </Box>
-                <Button component={Link} href={props.projectLink} variant="contained" color="primary">
-                  {Link ? 'Project Link' : 'No link :('}
+                <Button component={Link} href={props.projectLink} variant={props.projectLink ? "contained" : "outlined"} color="primary">
+                  {props.projectLink ? 'Project Link' : 'No link'}
                 </Button>
               </div>
             )}
