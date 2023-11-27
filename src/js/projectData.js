@@ -5,6 +5,7 @@ export const projSample = {
   tech: [],
   thumb: '',
   projectLink: '',
+  index: 0,
 };
 
 export const projRaytracer = {
@@ -14,6 +15,7 @@ export const projRaytracer = {
   tech: ['C++', 'SDL2'],
   thumb: require('../images/rendering/render.PNG'),
   projectLink: 'https://github.com/vanandrewnguyen/raytracerInOneWeekend',
+  index: 0,
 };
 
 export const projRasterizer = {
@@ -23,6 +25,7 @@ export const projRasterizer = {
   tech: ['C++', 'OpenGL'],
   thumb: require('../images/rendering/opengl.png'),
   projectLink: 'https://github.com/vanandrewnguyen/renderingEngine',
+  index: 1,
 };
 
 export const shaderPathtracer = {
@@ -32,6 +35,7 @@ export const shaderPathtracer = {
   tech: ['GLSL'],
   thumb: require('../images/shaders/pathTracing3.PNG'),
   projectLink: 'https://www.shadertoy.com/view/7ljfzm',
+  index: 2,
 };
 
 export const shaderWater = {
@@ -41,6 +45,7 @@ export const shaderWater = {
   tech: ['GLSL'],
   thumb: require('../images/shaders/water.png'),
   projectLink: 'https://www.shadertoy.com/view/fsKSWy',
+  index: 3,
 };
 
 export const shaderMountain = {
@@ -50,6 +55,7 @@ export const shaderMountain = {
   tech: ['GLSL'],
   thumb: require('../images/shaders/himalayas.PNG'),
   projectLink: 'https://www.shadertoy.com/view/NsyXR1',
+  index: 4,
 };
 
 export const shaderVolumetric = {
@@ -59,6 +65,7 @@ export const shaderVolumetric = {
   tech: ['GLSL'],
   thumb: require('../images/shaders/wax.png'),
   projectLink: 'https://www.shadertoy.com/view/sdsBDj',
+  index: 5,
 };
 
 export const shaderGOF = {
@@ -68,6 +75,7 @@ export const shaderGOF = {
   tech: ['GLSL'],
   thumb: require('../images/shaders/gol.PNG'),
   projectLink: 'https://www.shadertoy.com/view/ftdXWn',
+  index: 5,
 };
 
 export const shaderPlanet = {
@@ -77,6 +85,7 @@ export const shaderPlanet = {
   tech: ['GLSL'],
   thumb: require('../images/shaders/atmos.PNG'),
   projectLink: 'https://www.shadertoy.com/view/NljBWc',
+  index: 6,
 };
 
 export const videoWater = {
@@ -86,6 +95,7 @@ export const videoWater = {
   tech: [],
   thumb: require('../images/youtube-thumbs/wtrBreakdownThumb.PNG'),
   projectLink: 'https://www.youtube.com/watch?v=-wgfJ-kZqTU',
+  index: 7,
 };
 
 export const videoMountain = {
@@ -95,6 +105,7 @@ export const videoMountain = {
   tech: [],
   thumb: require('../images/youtube-thumbs/mtnBreakdownThumb.jpg'),
   projectLink: 'https://www.youtube.com/watch?v=j7_fsOJdZHM',
+  index: 8,
 };
 
 export const gameTFTFU = {
@@ -104,6 +115,7 @@ export const gameTFTFU = {
   tech: ['GML'],
   thumb: require('../images/game-screenshots/tftfuBed.png'),
   projectLink: 'https://vanandrew.itch.io/flames',
+  index: 9,
 };
 
 export const gameKadent = {
@@ -113,6 +125,7 @@ export const gameKadent = {
   tech: ['GML'],
   thumb: require('../images/game-screenshots/kadent.png'),
   projectLink: 'https://vanandrew.itch.io/kadent',
+  index: 10,
 };
 
 export const gameHorde = {
@@ -122,6 +135,7 @@ export const gameHorde = {
   tech: ['GML'],
   thumb: require('../images/game-screenshots/corridor.png'),
   projectLink: 'https://vanandrew.itch.io/horde',
+  index: 11,
 };
 
 export const projPatterns = {
@@ -131,6 +145,7 @@ export const projPatterns = {
   tech: ['JS'],
   thumb: null,
   projectLink: 'https://editor.p5js.org/vanandrew/sketches',
+  index: 12,
 };
 
 export const projDungeonMania = {
@@ -140,6 +155,7 @@ export const projDungeonMania = {
   tech: ['Java', 'JavaFX'],
   thumb: null,
   projectLink: null,
+  index: 13,
 };
 
 export const projSeams = {
@@ -149,6 +165,7 @@ export const projSeams = {
   tech: ['Python'],
   thumb: null,
   projectLink: null,
+  index: 14,
 };
 
 export const projDNS = {
@@ -158,6 +175,7 @@ export const projDNS = {
   tech: ['Python'],
   thumb: null,
   projectLink: null,
+  index: 15,
 };
 
 export const projAirbrb = {
@@ -167,6 +185,7 @@ export const projAirbrb = {
   tech: ['JS', 'React', 'MUI'],
   thumb: null,
   projectLink: null,
+  index: 16,
 };
 
 export const projPortfolio = {
@@ -176,6 +195,7 @@ export const projPortfolio = {
   tech: ['JS', 'GLSL', 'React', 'Three.js', 'MUI'],
   thumb: null,
   projectLink: null,
+  index: 17,
 };
 
 export const shaderGallery = [

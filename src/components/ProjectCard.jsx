@@ -1,19 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardContent, CardActionArea, CardMedia, Chip, Box, Typography, Button, Link } from '@mui/material';
 
-const ProjectCard = ({ props }) => {
-  const [expanded, setExpanded] = useState(false);
+const ProjectCard = ({ props, expanded, onToggle }) => {
   const defaultImg = require('../images/rendering/render2.png');
-
-  const handleToggle = () => {
-    setExpanded(!expanded);
-  }
-
-  // sx={{ width: cardWidth }} or minWidth and maxWidth
 
   return (
     <>
-      <Card onClick={handleToggle}>
+      <Card onClick={onToggle}>
         <CardActionArea>
           <CardMedia
             component="img"
