@@ -75,7 +75,7 @@ export const shaderGOF = {
   tech: ['GLSL'],
   thumb: require('../images/shaders/gol.PNG'),
   projectLink: 'https://www.shadertoy.com/view/ftdXWn',
-  index: 5,
+  index: 99,
 };
 
 export const shaderPlanet = {
