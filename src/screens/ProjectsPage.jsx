@@ -20,8 +20,8 @@ const ProjectsPage = () => {
   return (
     <div>
       <Box section="section" sx={{ p: 1, m: 1 }} display="flex" flexDirection="column" justifyContent="center" alignItems="center" >
-        <Box section="section" sx={{ my: 1 }} style={{ width: pageWidth }}>
-          <Typography variant="h3" sx={{ my: 1 }}>Projects</Typography>
+        <Box section="section" sx={{ my: 2 }} style={{ width: pageWidth }}>
+          <Typography variant="h2" sx={{ my: 2 }}>Projects</Typography>
           <Typography variant="body1">{bodyText}</Typography>
           <Typography variant="body1">{body2Text}</Typography>
         </Box>
