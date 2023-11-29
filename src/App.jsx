@@ -9,7 +9,6 @@ import './App.css';
 import LandingPage from './screens/LandingPage';
 import AboutPage from './screens/AboutPage';
 import ProjectsPage from './screens/ProjectsPage';
-import ArtPage from './screens/ArtPage';
 import Nav from './components/Nav';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -34,7 +33,6 @@ const App = () => {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path='/projects' element={<ProjectsPage />} />
-            <Route path='/art' element={<ArtPage />} />
             <Route path='/about' element={<AboutPage />} />
           </Routes>
         </BrowserRouter>

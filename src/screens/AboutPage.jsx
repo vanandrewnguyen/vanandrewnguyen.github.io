@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Box, Typography, Chip } from '@mui/material';
 
+import SocialIcons from '../components/SocialIcons';
+
 const AboutPage = () => {
   const pageWidth = '65vw';
   const array1 = ['C++', 'C', 'Python', 'GLSL', 'HTML/CSS', 'SQL', 'React'];
@@ -34,6 +36,10 @@ const AboutPage = () => {
               <Chip key={text} label={text} variant="outlined" sx={{ mr: 1 }}/>
             ))}
           </Box>
+          <Box section="section" sx={{ my: 1 }}>
+            <Typography variant="body1">Get in touch below!</Typography>
+          </Box>
+          <SocialIcons align={"left"} />
         </Box>
       </Box>
     </div>

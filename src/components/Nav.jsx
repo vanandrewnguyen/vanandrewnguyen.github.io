@@ -20,7 +20,7 @@ const Nav = () => {
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Van Andrew Nguyen</Link>
           </Typography>
             <Link to="/projects" style={{ textDecoration: 'none', color: 'inherit' }}><Button variant='active' title='Projects'><CodeIcon /></Button></Link>
-            <Link to="/art" style={{ textDecoration: 'none', color: 'inherit' }}><Button variant='active' title='Art'><ColorLensIcon /></Button></Link>
+            <a href="https://vanandrew.itch.io/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}><Button variant='active' title='Games'><ColorLensIcon /></Button></a>
             <Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}><Button variant='active' title='About'><PersonIcon /></Button></Link>
         </Toolbar>
       </AppBar>
