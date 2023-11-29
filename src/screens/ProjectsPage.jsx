@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Grid, Box, Typography } from '@mui/material';
+import { Grid, Box, Typography, Button } from '@mui/material';
+import { animateScroll as scroll } from 'react-scroll';
 
 import ProjectCard from '../components/ProjectCard';
 import ImageGallery from '../components/ImageGallery';
@@ -17,6 +18,11 @@ const ProjectsPage = () => {
     setExpandedCardIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
+  const scrollTo = (height) => {
+    setExpandedCardIndex(null);
+    scroll.scrollTo(height, { smooth: true, offset: -50 });
+  }
+
   return (
     <div>
       <Box section="section" sx={{ p: 1, m: 1 }} display="flex" flexDirection="column" justifyContent="center" alignItems="center" >
@@ -24,6 +30,14 @@ const ProjectsPage = () => {
           <Typography variant="h2" sx={{ my: 2 }}>Projects</Typography>
           <Typography variant="body1">{bodyText}</Typography>
           <Typography variant="body1">{body2Text}</Typography>
+        </Box>
+
+        <Box section="section" sx={{ my: 2 }} style={{ width: pageWidth }} display="flex" flexDirection="row" justifyContent="left" alignItems="left">
+          <Button variant="outlined" color="primary" onClick={() => scrollTo(350)}>Rendering</Button>
+          <Button variant="outlined" color="primary" onClick={() => scrollTo(590)}>Shaders</Button>
+          <Button variant="outlined" color="primary" onClick={() => scrollTo(1200)}>Videos</Button>
+          <Button variant="outlined" color="primary" onClick={() => scrollTo(1400)}>Games</Button>
+          <Button variant="outlined" color="primary" onClick={() => scrollTo(1600)}>University</Button>
         </Box>
         
         <Box section="section" sx={{ my: 1 }}>
