@@ -3,6 +3,8 @@ import React from 'react';
 import { Box, Typography, Chip } from '@mui/material';
 
 import SocialIcons from '../components/SocialIcons';
+import ShaderCanvas from '../components/ShaderCanvas';
+import { fragmentShader } from '../js/voronoi';
 
 const AboutPage = () => {
   const pageWidth = '65vw';
@@ -42,6 +44,7 @@ const AboutPage = () => {
           <SocialIcons align={"left"} />
         </Box>
       </Box>
+      <ShaderCanvas fragmentShader={fragmentShader} height={'35vh'} />
     </div>
   );
 };

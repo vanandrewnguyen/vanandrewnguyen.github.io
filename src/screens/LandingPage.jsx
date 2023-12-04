@@ -2,6 +2,8 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 
 import SocialIcons from '../components/SocialIcons';
+import ShaderCanvas from '../components/ShaderCanvas';
+import { fragmentShader } from '../js/spark';
 
 const LandingPage = () => {
   const pageWidth = '65vw';
@@ -18,6 +20,7 @@ const LandingPage = () => {
           <SocialIcons align={"center"} />
         </Box>
       </Box>
+      <ShaderCanvas fragmentShader={fragmentShader} height={'50vh'} />
     </div>
   );
 };
