@@ -10,10 +10,10 @@ export const projSample = {
 
 export const projRaytracer = {
   name: 'Raytracer',
-  description: "Following Peter Shirley's 'Raytracing' series, I wrote a basic raytracing engine which covers diffuse lighting, subsurface scattering, volmetric mediums and caustics, and collisions with boxes and spheres. I'm extending it with custom features such as custom scene configuration, extra noise functions and extended ray-triangle collisions.",
+  description: "Following Peter Shirley's 'Raytracing' series, I wrote a basic raytracing engine which covers diffuse lighting, subsurface scattering, volmetric mediums and caustics, and collisions with boxes and spheres. I'm extending it with custom features; multithreading, custom scene configuration, normal mapping, noise functions and extended ray-triangle collisions.",
   status: 'Ongoing',
   tech: ['C++', 'SDL2'],
-  thumb: require('../images/rendering/render.PNG'),
+  thumb: require('../images/rendering/render.png'),
   projectLink: 'https://github.com/vanandrewnguyen/raytracerInOneWeekend',
   index: 0,
 };
@@ -206,4 +206,5 @@ export const shaderGallery = [
   require('../images/shaders/mountainsFog.PNG'),
   require('../images/shaders/water2.PNG'),
   require('../images/shaders/gerstner.png'),
+  require('../images/rendering/materialShowcase.png')
 ];

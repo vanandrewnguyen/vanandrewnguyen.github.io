@@ -11,8 +11,8 @@ const ProjectsPage = () => {
   const [expandedCardIndex, setExpandedCardIndex] = useState(null);
 
   const pageWidth = '65vw';
-  const bodyText = "I really enjoy understanding the math and design behind computer graphics models. Working with graphics allows me to shift perspectives from artist to designer to researcher, and it's one of the few areas of study I've been forced to learn major theory outside of computer science; colour theory, physics models, aesthetic design.";
-  const body2Text = "I've also worked with games in the past, and throughout university, have dabbled with full stack applications too."
+  const bodyText = "I love working with multimedia. There's something about the feedback loop you get that is so satisfying, iterating on small sub-sections of an idea brought to life with simple programming.";
+  const body2Text = "Working with games, graphics and computer science as a whole really fulfils this feeling, and I hope you can see it in my projects below!"
 
   const handleToggle = (index) => {
     setExpandedCardIndex((prevIndex) => (prevIndex === index ? null : index));
